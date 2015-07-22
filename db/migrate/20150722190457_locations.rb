@@ -7,3 +7,4 @@ class Locations < ActiveRecord::Migration
     end
   end
 end
+
