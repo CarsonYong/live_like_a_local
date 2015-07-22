@@ -15,9 +15,22 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/javascript/application.js"></script>
 
-  <title></title>
+  <title>Live Like a Local!</title>
 </head>
 <body>
+  <div class="navbar">
+    <nav>
+      <ul>
+        <% if session['user_id'] %>
+          <li>Welcome, <%= session['first_name'] %> </li>
+          <li><a href ="/user/logout"> Logout</a></li>
+        <% else %>
+          <li><a href ="/user/signup">Signup</a></li>
+          <li><a href ="/user/login">Login</a></li>
+        <% end %>  
+      </ul>
+    </nav>
+  </div>
   <%= yield %>
 </body>
 </html>

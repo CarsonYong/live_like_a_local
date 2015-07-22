@@ -1,36 +1,46 @@
+<% if @user && @user.errors.any? %>
+  <div>
+    <strong>There are issues with your form, please fix them:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |user| %>
+        <li><%= user %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class = "signup">
 
-<form method="post" action="/user/signup">
+  <form method="post" action="/user/signup">
 
-  <div>
-    <label>Username:</label>
-    <input type="text" name="users[username]">
-  </div>
-  <div>
-    <label>First Name:</label>
-    <input type="text" name="users[first_name]" >
-  </div>
-  <div>
-    <label>Last Name:</label>
-    <input type="text" name="users[last_name]"
-    value="">
-  </div>
-  <div>
-    <label>Email:</label>
-    <input type="email" name="users[email]">   
-  </div>
-  <div>
-    <label>Password:</label>
-    <input type="password" name="users[password]">   
-  </div>
-  <div>
-    <label>Home City/Town:</label>
-    <input type="text" name="users[home_location]">   
-  </div>  
-  <div>
-  <input type="submit" value="Submit">
-  </div>
+    <div>
+      <label>Username:</label>
+      <input type="text" name="users[username]" value="<%= @user && @user.username %>">
+    </div>
+    <div>
+      <label>First Name:</label>
+      <input type="text" name="users[first_name]" value="<%= @user && @user.first_name %>">
+    </div>
+    <div>
+      <label>Last Name:</label>
+      <input type="text" name="users[last_name]" value="<%= @user && @user.last_name %>">
+    </div>
+    <div>
+      <label>Email:</label>
+      <input type="text" name="users[email]" value="<%= @user && @user.email %>">   
+    </div>
+    <div>
+      <label>Password:</label>
+      <input type="password" name="users[password]">   
+    </div>
+    <div>
+      <label>Home City/Town:</label>
+      <input type="text" name="users[home_location]" value="<%= @user && @user.home_location %>">   
+    </div>  
+    <div>
+    <input type="submit" value="Submit">
+    </div>
 
-</form>
+  </form>
 
 </div>
