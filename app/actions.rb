@@ -9,6 +9,10 @@ get '/user/signup' do
   erb :'user/signup'
 end
 
+get '/discover' do
+  erb :'discover'
+end
+
 def set_session_info(user)
   session['user_id'] = user.id
   session['first_name'] = user.first_name
@@ -23,7 +27,7 @@ post '/user/signup' do
   @user = User.new(params[:users])
   if @user.save
     set_session_info(@user)
-    redirect '/'
+    redirect '/discover'
   else
     erb :'user/signup'
   end
@@ -41,7 +45,7 @@ post '/user/login' do
   end
   if @user.password == (params[:password])
     set_session_info(@user)
-    redirect '/'
+    redirect '/discover'
   else
     @error = 'Password is incorrect!'
     erb :'user/login'
