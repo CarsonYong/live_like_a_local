@@ -1,0 +1,27 @@
+<script type="text/javascript" src="/javascript/instafeed.min.js"></script>
+
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'toronto',
+        limit: '25',
+        get: 'location',
+        locationId: 677642205,
+        clientId: '23ec1684bbc84ed58dcf804e3f4b9897'
+    });
+    feed.run();
+</script>
+
+<script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'toronto',
+        limit: '25',
+        get: 'location',
+        locationId: 764246607,
+        clientId: '23ec1684bbc84ed58dcf804e3f4b9897'
+    });
+    feed.run();
+</script>
+
+<div id="instafeed"></div>
