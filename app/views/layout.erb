@@ -23,11 +23,12 @@
       <ul>
         <% if session['user_id'] %>
           <li>Welcome, <%= session['first_name'] %> </li>
-          <li><a href ="/user/logout"> Logout</a></li>
+          <li><a href="/user/logout"> Logout</a></li>
         <% else %>
-          <li><a href ="/user/signup">Signup</a></li>
-          <li><a href ="/user/login">Login</a></li>
-        <% end %>  
+          <li><a href="/user/signup">Signup</a></li>
+          <li><a href="/user/login">Login</a></li>
+        <% end %> 
+        <li><a href="/add">Add a local spot</a></li> 
       </ul>
     </nav>
   </div>

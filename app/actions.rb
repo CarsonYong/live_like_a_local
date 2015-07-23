@@ -20,11 +20,12 @@ end
 
 def delete_session_info
   session['user_id'] = nil
-  session['username'] = nil
+  session['first_name'] = nil
 end
 
 post '/user/signup' do
   @user = User.new(params[:users])
+
   if @user.save
     set_session_info(@user)
     redirect '/discover'
@@ -56,4 +57,21 @@ get '/user/logout' do
   delete_session_info
   redirect '/'
 end
+
+get '/add' do
+  if session['user_id'] == nil
+    erb :'user/login'
+  else
+    erb :'add'
+  end
+end
+
+post '/add' do
+  @sight = Sight.new
+end
+
+
+
+
+
 

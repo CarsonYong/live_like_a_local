@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722192500) do
+ActiveRecord::Schema.define(version: 20150723002843) do
 
   create_table "locations", force: :cascade do |t|
     t.string  "country"
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(version: 20150722192500) do
     t.string "last_name"
     t.string "username"
     t.string "email"
-    t.string "password"
     t.string "home_location"
+    t.string "password_salt"
+    t.string "password_hash"
   end
 
   create_table "users_sights", force: :cascade do |t|
