@@ -6,3 +6,17 @@
      <input type="submit" value="Let's go!">
    </div>
  </form>
+
+<% if @sights != nil %>
+   <div>
+     <% @sights.each do |sight| %>
+     <div>
+       <%= sight.sight_name %>
+     </div>
+     <% end %>
+   </div>
+ <% end %>
+
+ <div>
+   <%= @error %>
+ </div>

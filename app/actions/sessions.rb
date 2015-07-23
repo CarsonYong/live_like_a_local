@@ -9,7 +9,7 @@ post '/sessions' do
     return erb :'sessions/new'
   end
 
-  if @user.foo(params[:password])
+  if @user.verify_password(params[:password])
     set_session_info(@user)
     redirect '/sights/discover'
   else

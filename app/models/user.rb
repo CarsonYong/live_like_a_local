@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
   end
 
-  def foo(password)
+  def verify_password(password)
     self.password_hash == BCrypt::Engine.hash_secret(password, self.password_salt) ? true : false 
    end
 

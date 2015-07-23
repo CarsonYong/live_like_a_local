@@ -2,6 +2,17 @@ get '/sights/new' do
   erb :'sights/new'
 end
 
+get '/sight' do
+  @location = Location.find_by_city(params[:search])
+  if @location
+    @sights = Sight.where(locations_id: @location.id)
+  else
+    @sights = []
+    @error = "City hasn't been added yet"
+  end
+  erb :'sights/discover'
+end
+
 post '/sights/new' do
   @sight = Sight.new(params[:sights])
 
@@ -10,10 +21,5 @@ post '/sights/new' do
   else
     erb :'sights/new'
   end
-
-get '/sights/:location' do
-  @location = Location.find(params[:city])
-  @sight = Sight.find(@location.id)
-  erb :'sights/:location'
-
 end
+
