@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150723213810) do
+ActiveRecord::Schema.define(version: 20150723221034) do
 
-  create_table "cities", force: :cascade do |t|
-    t.string "city"
+  create_table "locations", force: :cascade do |t|
     t.string "country"
+    t.string "city"
   end
 
   create_table "sights", force: :cascade do |t|
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150723213810) do
     t.string  "email"
     t.string  "password_salt"
     t.string  "password_hash"
-    t.integer "city_id"
+    t.integer "locations_id"
   end
 
   create_table "users_sights", force: :cascade do |t|
