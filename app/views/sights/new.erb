@@ -10,13 +10,26 @@
 <% if session['user_id'] %>
   <div>
     <label>City:</label>
-    <input type="text" name="city"
-    value="<%= @user && @user.home_location %>">
+    <input type="text" name="sights[city]" value="<%= @user && @user.home_location%>">
   </div>
   <div>
     <label>Local Spot:</label>
-    <input type="text" name="sight_name"
-    value="<%= @user && @user.a %>">
+    <input type="text" name="sights[sight_name]" value="<%= @sight && @sight.sight_name %>">
+  </div>
+  <div>
+    <label>Category:</label>
+    <select name="sights[category]" value="<% @sight && @sight.category %>">
+      <option value="bars">Bars</option>
+      <option value="restaurants">Resaurants</option>
+      <option value="parks">Parks</option>
+      <option value="cool shit">Cool shit</option>
+    </select>
+  </div>
+  <div>
+    <label>Features:</label>
+    <br>
+    <textarea type="text" name="sights[feature]" rows="10" cols="50" value="<% @sight && @sight.feature %>">
+    </textarea> 
   </div>
   <div>
     <input type="submit" value="Submit">
