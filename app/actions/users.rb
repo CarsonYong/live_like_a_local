@@ -18,7 +18,7 @@ post '/users' do
 
   if @user.save
     set_session_info(@user)
-    redirect '/discover'
+    redirect '/sights/discover'
   else
     erb :'users/new'
   end

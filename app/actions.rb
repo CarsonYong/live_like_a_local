@@ -5,8 +5,8 @@ get '/' do
   erb :'index'
 end
 
-get '/discover' do
-  erb :'discover'
+get '/sights/discover' do
+  erb :'sights/discover'
 end
 
 get '/insta' do

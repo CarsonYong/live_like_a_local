@@ -21,12 +21,6 @@ class User < ActiveRecord::Base
   end
 
   def foo(password)
-    puts password
-    puts self.password_salt
-    puts self.password_hash
-    puts BCrypt::Engine.hash_secret(password, self.password_salt)
     self.password_hash == BCrypt::Engine.hash_secret(password, self.password_salt) ? true : false 
    end
-    
-
 end

@@ -1,1 +1,27 @@
 <!-- ADD FORM HERE -->
+
+
+
+
+
+<div class = "add_sights">
+
+<form method="post" action="/sights/new">
+<% if session['user_id'] %>
+  <div>
+    <label>City:</label>
+    <input type="text" name="city"
+    value="<%= @user && @user.home_location %>">
+  </div>
+  <div>
+    <label>Local Spot:</label>
+    <input type="text" name="sight_name"
+    value="<%= @user && @user.a %>">
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+  <% end %>
+</form>
+
+</div>

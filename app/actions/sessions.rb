@@ -1,3 +1,5 @@
+Rack::MethodOverride
+
 get '/sessions/new' do
   erb :'sessions/new'
 end
@@ -11,14 +13,14 @@ post '/sessions' do
 
   if @user.foo(params[:password])
     set_session_info(@user)
-    redirect '/discover'
+    redirect '/sights/discover'
   else
     @error = 'Password is incorrect!'
     erb :'sessions/new'
   end
 end
 
-delete '/logout' do
+get '/logout' do
   delete_session_info
   redirect '/'
 end
