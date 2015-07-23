@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  attr_accessor :password
+  attr_accessor :password, :city
 
   belongs_to :location
   has_many :sights, source: :user_sights
@@ -23,4 +23,5 @@ class User < ActiveRecord::Base
   def foo(password)
     self.password_hash == BCrypt::Engine.hash_secret(password, self.password_salt) ? true : false 
    end
+
 end
