@@ -35,8 +35,12 @@
     </div>
     <div>
       <label>Home City/Town:</label>
-      <input type="text" name="users[home_location]" value="<%= @user && @user.home_location %>">   
-    </div>  
+      <input type="text" name="location[city]" >   
+    </div>
+    <div>
+      <label>Country:</label>
+      <input type="text" name="location[country]" >   
+    </div>   
     <div>
     <input type="submit" value="Submit">
     </div>
