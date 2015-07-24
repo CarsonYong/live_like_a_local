@@ -13,6 +13,8 @@ get '/users/new' do
   erb :'users/new'
 end
 
+
+
 post '/users' do
   @user = User.new(params[:users])
   @city = (params[:location][:city])
@@ -31,4 +33,9 @@ post '/users' do
   else
     erb :'users/new'
   end
+end
+
+get '/users/:id' do
+  @users = User.find params[:id]
+  erb :'users/show'
 end
