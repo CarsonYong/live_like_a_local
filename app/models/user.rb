@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :password, :city
 
-  belongs_to :location
+  belongs_to :cities
   has_many :sights, source: :user_sights
 
   before_create :encrypt_password
