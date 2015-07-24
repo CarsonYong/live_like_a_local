@@ -1,22 +1,22 @@
 <div class = "edit">
 
-  <form method="put" action="/users/edit">
+  <form method="post" action="/users/edit">
 
     <div>
       <label>Username:</label>
-      <input type="text" name="users[username]" value="<%= @user && @user.username %>">
+      <input type="text" name="users[username]" value="<%= @current_user && @current_user.username %>">
     </div>
     <div>
       <label>First Name:</label>
-      <input type="text" name="users[first_name]" value="<%= @user && @user.first_name %>">
+      <input type="text" name="users[first_name]" value="<%= @current_user && @current_user.first_name %>">
     </div>
     <div>
       <label>Last Name:</label>
-      <input type="text" name="users[last_name]" value="<%= @user && @user.last_name %>">
+      <input type="text" name="users[last_name]" value="<%= @current_user && @current_user.last_name %>">
     </div>
     <div>
       <label>Email:</label>
-      <input type="text" name="users[email]" value="<%= @user && @user.email %>">   
+      <input type="text" name="users[email]" value="<%= @current_user && @current_user.email %>">   
     </div>
     <div>
       <label>Password:</label>
@@ -24,11 +24,11 @@
     </div>
     <div>
       <label>Home City/Town:</label>
-      <input type="text" name="location[city]" >   
+      <input type="text" name="location[city]" value="<%= @city %>">   
     </div>
     <div>
       <label>Country:</label>
-      <input type="text" name="location[country]" >   
+      <input type="text" name="location[country]" value="<%= @country %>">   
     </div>   
     <div>
     <input type="submit" value="Submit">

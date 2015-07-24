@@ -37,7 +37,7 @@ post '/sights/new' do
   if @sight.save
     @user_sight = UserSight.new({:user_id => @user, :sight_id => @sight.id}) 
     @user_sight.save
-    redirect '/sights/discover'
+    redirect '/sights/index'
   else
     erb :'sights/new'
   end
