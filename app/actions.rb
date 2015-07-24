@@ -2,16 +2,12 @@
 enable :session
 
 get '/' do
+  @body_class = 'homepage'
   erb :'index'
 end
 
 get '/insta' do
   erb :'insta'
-end
-
-get "/user_sights" do
-  require_user
-  @sights = @current_user.sights
 end
 
 def require_user

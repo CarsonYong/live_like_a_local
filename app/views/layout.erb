@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/starter-template/starter-template.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/application.css">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -29,7 +30,7 @@
     <![endif]-->
   <style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style></head>
 
-    <body>
+    <body class="<%= @body_class %>">
 
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
