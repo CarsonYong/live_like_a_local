@@ -27,8 +27,12 @@ post '/users' do
   end
   if @user.save
     set_session_info(@user)
-    redirect '/sights/discover'
+    redirect '/sights/index'
   else
     erb :'users/new'
   end
+end
+
+get '/users/itinerary/' do
+    erb :'users/itinerary'
 end

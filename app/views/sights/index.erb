@@ -12,7 +12,7 @@
      <% @sights.each do |sight| %>
      <div>
       <% if session['user_id'] %>
-          <a href="#">Add to itinerary</a>
+          <a href="/users/itinerary">Add to itinerary</a>
         <% else %>
           <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
         <% end %>
