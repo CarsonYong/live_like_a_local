@@ -4,7 +4,7 @@ get '/sights/new' do
     erb :'sights/new'
 end
 
-get '/sights/index' do
+get '/sights' do
   erb :'sights/index'
 end
 
@@ -30,7 +30,7 @@ post '/sights/new' do
   end
 
   if @sight.save
-    redirect '/sights/index'
+    redirect '/sights/'
   else
     erb :'sights/new'
   end
