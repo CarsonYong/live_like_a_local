@@ -1,0 +1,29 @@
+ <form action="/sight" method="get">
+   <div>
+     <input type="text" name="search" placeholder="Where would you like to discover?">
+   </div>
+   <div>
+     <input type="submit" value="Let's go!">
+   </div>
+ </form>
+
+<% if @sights != nil %>
+   <div>
+     <% @sights.each do |sight| %>
+     <div>
+      <% if session['user_id'] %>
+          <a href="#">Add to itinerary</a>
+        <% else %>
+          <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
+        <% end %>
+        <%= sight.sight_name %>
+        <%= sight.category %>
+        <%= sight.feature %>
+     </div>
+     <% end %>
+   </div>
+ <% end %>
+
+ <div>
+   <%= @error %>
+ </div>

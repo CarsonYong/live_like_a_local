@@ -5,22 +5,8 @@ get '/' do
   erb :'index'
 end
 
-get '/sights/discover' do
-  erb :'sights/discover'
-end
-
 get '/insta' do
   erb :'insta'
-end
-
-get '/add' do
-  require_user
-
-  erb :'add'
-end
-
-post '/add' do
-  @sight = Sight.new
 end
 
 get "/user_sights" do

@@ -1,5 +1,3 @@
-Rack::MethodOverride
-
 get '/sessions/new' do
   erb :'sessions/new'
 end
@@ -11,9 +9,9 @@ post '/sessions' do
     return erb :'sessions/new'
   end
 
-  if @user.foo(params[:password])
+  if @user.verify_password(params[:password])
     set_session_info(@user)
-    redirect '/sights/discover'
+    redirect '/sights/index'
   else
     @error = 'Password is incorrect!'
     erb :'sessions/new'
