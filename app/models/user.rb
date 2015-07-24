@@ -5,9 +5,7 @@ class User < ActiveRecord::Base
   belongs_to :location
   has_many :sights, source: :user_sights
 
-
   before_create :encrypt_password
-
 
   validates :username, presence: true, uniqueness: true
   validates :first_name, presence: true
@@ -22,6 +20,6 @@ class User < ActiveRecord::Base
 
   def verify_password(password)
     self.password_hash == BCrypt::Engine.hash_secret(password, self.password_salt) ? true : false 
-   end
+  end
 
 end
