@@ -35,7 +35,7 @@ post '/sights/new' do
     redirect '/sights/new'
   end
   if @sight.save
-    redirect '/sights/discover'
+    redirect '/sights/index'
   else
     erb :'sights/new'
   end

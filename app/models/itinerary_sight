@@ -1,0 +1,5 @@
+class ItinerarySight < ActiveRecord::Base
+
+  belongs_to :intinerary_user
+  
+end
