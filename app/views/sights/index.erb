@@ -12,7 +12,10 @@
      <% @sights.each do |sight| %>
      <div>
       <% if session['user_id'] %>
-          <a href="#">Add to itinerary</a>
+          <form action="/users/itinerary" method="post">
+            <button>Add to itinerary</button>
+            <input type="hidden" name="sight" value="<%= sight.id %>">
+          </form>
         <% else %>
           <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
         <% end %>

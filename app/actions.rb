@@ -14,9 +14,6 @@ get "/user_sights" do
   @sights = @current_user.sights
 end
 
-
-# protected
-
 def require_user
   if session['user_id']
     @current_user = User.find session['user_id']

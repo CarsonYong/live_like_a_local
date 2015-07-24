@@ -11,17 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724155206) do
-
-  create_table "intinerary_sights", force: :cascade do |t|
-    t.integer "sights_id"
-    t.integer "intinerary_users_id"
-  end
-
-  create_table "intinerary_users", force: :cascade do |t|
-    t.string  "name"
-    t.integer "users_id"
-  end
+ActiveRecord::Schema.define(version: 20150724185727) do
 
   create_table "locations", force: :cascade do |t|
     t.string "country"
@@ -32,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150724155206) do
     t.string  "sight_name"
     t.string  "category"
     t.string  "feature"
-    t.integer "locations_id"
+    t.integer "location_id"
   end
 
   create_table "user_sights", force: :cascade do |t|
@@ -47,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150724155206) do
     t.string  "email"
     t.string  "password_salt"
     t.string  "password_hash"
-    t.integer "locations_id"
+    t.integer "location_id"
   end
 
 end
