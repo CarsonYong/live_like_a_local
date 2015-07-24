@@ -35,6 +35,11 @@ ActiveRecord::Schema.define(version: 20150724155206) do
     t.integer "locations_id"
   end
 
+  create_table "user_sights", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "sight_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string  "first_name"
     t.string  "last_name"
@@ -43,11 +48,6 @@ ActiveRecord::Schema.define(version: 20150724155206) do
     t.string  "password_salt"
     t.string  "password_hash"
     t.integer "locations_id"
-  end
-
-  create_table "users_sights", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "sight_id"
   end
 
 end

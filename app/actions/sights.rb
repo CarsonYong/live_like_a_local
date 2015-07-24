@@ -1,9 +1,8 @@
 get '/sights/new' do
-    user = session['user_id']
-    current_user = User.find(user)
+    @user = session['user_id']
+    current_user = User.find(@user)
     id = current_user.locations_id
     current_user_location = Location.find_by_id(id)
-    # current_user_location = Location.where(["city = :user_location", { user_location: current_user_location_id.locations_id }])
     location = current_user_location.city
 
    @current_user_location = location
@@ -34,10 +33,14 @@ post '/sights/new' do
   else
     redirect '/sights/new'
   end
+
   if @sight.save
-    redirect '/sights/index'
+    @user_sight = UserSight.new({:user_id => @user, :sight_id => @sight.id}) 
+    @user_sight.save
+    redirect '/sights/discover'
   else
     erb :'sights/new'
   end
+
 end
 
