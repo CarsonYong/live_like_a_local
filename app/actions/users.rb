@@ -13,8 +13,6 @@ get '/users/new' do
   erb :'users/new'
 end
 
-
-
 post '/users' do
   @user = User.new(params[:users])
   @city = (params[:location][:city])
@@ -23,9 +21,9 @@ post '/users' do
   if location.length == 0
     @location = Location.new({:city=> @city, :country => @country})
     @location.save
-    @user.locations_id = @location.id 
+    @user.location = @location
   else
-    @user.locations_id = location[0].id 
+    @user.location = location[0]
   end
   if @user.save
     set_session_info(@user)
@@ -35,11 +33,23 @@ post '/users' do
   end
 end
 
-get '/users/itinerary/' do
-    erb :'users/itinerary'
+get '/users/itinerary' do
+  require_user
+  @current_user.sights
+  erb :'users/itinerary'
 end
 
-get '/users/:id' do
-  @users = User.find params[:id]
+post '/users/itinerary' do
+  require_user
+  @user_sight = UserSight.new({:user_id => @current_user.id, :sight_id => params[:sight]}) 
+  @user_sight.save
+  sight = Sight.find_by_id(params[:sight])
+  city = sight.location.city
+  redirect '/sight?search=' + city
+end
+
+get '/users/profile' do
+  require_user
   erb :'users/show'
 end
+

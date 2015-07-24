@@ -1,12 +1,10 @@
-<% user = session['user_id'] 
-current_user = User.find(user)
-%>
 
 
-<h1><%= current_user.first_name %>'s profile page!</h1>
+
+<h1><%= @current_user.first_name %>'s profile page!</h1>
 
 <p>
-  First name: <%= current_user.first_name %>
+  Location: <%= @current_user.location.city %>
 </p>
 
 

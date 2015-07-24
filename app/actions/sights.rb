@@ -1,12 +1,7 @@
 get '/sights/new' do
-    @user = session['user_id']
-    current_user = User.find(@user)
-    id = current_user.locations_id
-    current_user_location = Location.find_by_id(id)
-    location = current_user_location.city
-
-   @current_user_location = location
-  erb :'sights/new'
+    require_user
+    @current_user_location = @current_user.location.city
+    erb :'sights/new'
 end
 
 get '/sights/index' do
@@ -16,7 +11,7 @@ end
 get '/sight' do
   @location = Location.find_by_city(params[:search])
   if @location
-    @sights = Sight.where(locations_id: @location.id)
+    @sights = Sight.where(location: @location)
   else
     @sights = []
     @error = "City hasn't been added yet"
@@ -29,15 +24,13 @@ post '/sights/new' do
   @city = (params[:location][:city])
   location = Location.where(["city = :city", { city: @city }])
   if location.length > 0
-    @sight.locations_id = location[0].id
+    @sight.location = location[0]
   else
     redirect '/sights/new'
   end
 
   if @sight.save
-    @user_sight = UserSight.new({:user_id => @user, :sight_id => @sight.id}) 
-    @user_sight.save
-    redirect '/sights/discover'
+    redirect '/sights/index'
   else
     erb :'sights/new'
   end

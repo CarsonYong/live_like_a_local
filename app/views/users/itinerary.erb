@@ -1,0 +1,9 @@
+<div>
+     <% @current_user.sights.each do |sight| %>
+     <div>
+        <%= sight.sight_name %>
+        <%= sight.category %>
+        <%= sight.feature %>
+     </div>
+     <% end %>
+   </div>
