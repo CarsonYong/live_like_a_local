@@ -9,12 +9,6 @@ get '/insta' do
   erb :'insta'
 end
 
-get '/add' do
-  require_user
-
-  erb :'add'
-end
-
 get "/user_sights" do
   require_user
   @sights = @current_user.sights
