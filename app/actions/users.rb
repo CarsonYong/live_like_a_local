@@ -39,3 +39,8 @@ get '/users/:id' do
   @users = User.find params[:id]
   erb :'users/show'
 end
+
+get '/users/:id/edit' do
+  @users = User.find params[:id]
+  erb :'users/edit'
+end
