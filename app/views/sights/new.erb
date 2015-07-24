@@ -10,7 +10,7 @@
 <% if session['user_id'] %>
   <div>
     <label>City:</label>
-    <input type="text" name="sights[city]" value="<%= @user && @user.home_location%>">
+    <input type="text" name="location[city]" value="<%= @current_user_location %>">
   </div>
   <div>
     <label>Local Spot:</label>
