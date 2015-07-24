@@ -27,7 +27,7 @@ post '/users' do
   end
   if @user.save
     set_session_info(@user)
-    redirect '/sights/index'
+    redirect '/sights/'
   else
     erb :'users/new'
   end
@@ -58,7 +58,7 @@ get '/users/edit' do
   require_user
   @user = session['user_id']
   current_user = User.find(@user)
-  id = current_user.locations_id
+  id = current_user.location
   current_user_location = Location.find_by_id(id)
   @city = current_user_location.city
   @country = current_user_location.country
@@ -66,7 +66,7 @@ get '/users/edit' do
 end
 
 
-post '/users/:id' do
+post '/users/edit' do
   require_user
   @current_user.update_attributes(params[:users])
   @city = (params[:location][:city])
@@ -75,13 +75,13 @@ post '/users/:id' do
   if location.length == 0
     @location = Location.new({:city=> @city, :country => @country})
     @location.save
-    @current_user.locations_id = @location.id 
+    @current_user.location = @location 
   else
-    @current_user.locations_id = location[0].id 
+    @current_user.location = location[0]
   end
   if @current_user.save
     set_session_info(@current_user)
-    redirect "/users/#{@current_user.id}"
+    redirect "/users/profile"
   else
     erb :'users/new'
   end

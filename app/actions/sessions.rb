@@ -11,7 +11,7 @@ post '/sessions' do
 
   if @user.verify_password(params[:password])
     set_session_info(@user)
-    redirect '/sights/index'
+    redirect '/sights'
   else
     @error = 'Password is incorrect!'
     erb :'sessions/new'
