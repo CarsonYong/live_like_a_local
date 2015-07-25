@@ -5,6 +5,8 @@ class Sight < ActiveRecord::Base
   belongs_to :location
   has_many :user_sights
   has_many :users, through: :user_sights
+
+  validates :sight_name, presence: true
   
   def city
     loc = Location.find(self.location_id)

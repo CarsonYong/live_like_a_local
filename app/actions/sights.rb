@@ -1,14 +1,17 @@
 get '/sights/new' do
-    require_user
-    @current_user_location = @current_user.location.city
-    erb :'sights/new'
+  @body_class = 'sights'
+  require_user
+  @current_user_location = @current_user.location.city
+  erb :'sights/new'
 end
 
 get '/sights' do
+  @body_class = 'search'
   erb :'sights/index'
 end
 
 get '/sight' do
+  @body_class = 'search'
   @location = Location.find_by_city(params[:search])
   if @location
     @sights = Sight.where(location: @location)
@@ -25,7 +28,7 @@ post '/sights/new' do
   location = Location.where(["city = :city", { city: @city }])
   if location.length > 0
     @sight.location = location[0]
-  else
+  else 
     redirect '/sights/new'
   end
 

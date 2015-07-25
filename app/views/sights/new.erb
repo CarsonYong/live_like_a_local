@@ -2,7 +2,9 @@
 
 <div class = "add_sights">
 
-<form method="post" action="/sights/new">
+<h2>Add you favourite local spots to share with the world</h2>
+
+<form role="form" method="post" action="/sights/new">
 <% if session['user_id'] %>
   <div>
     <label>City:</label>
@@ -24,11 +26,11 @@
   <div>
     <label>Features:</label>
     <br>
-    <textarea type="text" name="sights[feature]" rows="10" cols="50" value="<% @sight && @sight.feature %>">
+    <textarea id="text-box" type="text" name="sights[feature]" value="<% @sight && @sight.feature %>">
     </textarea> 
   </div>
   <div>
-    <input type="submit" value="Submit">
+    <button type="submit" class="btn btn-primary">Add my spot!</button>
   </div>
   <% end %>
 </form>

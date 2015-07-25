@@ -1,28 +1,29 @@
- <script type="text/javascript" src="/javascript/instafeed.min.js"></script>
- <form action="/sight" method="get">
-   <div>
-     <input type="text" name="search" placeholder="Where would you like to discover?">
-   </div>
-   <div>
-     <input type="submit" value="Let's go!">
-   </div>
- </form>
-
-<% if @sights != nil %>
-
-   <div>
-   <div class="row">
-     <% @sights.each do |sight| %>
+<script type="text/javascript" src="/javascript/instafeed.min.js"></script>
+  <h2>Search for a city below to discover local hot spots</h2>
+   <form role="form" action="/sight" method="get">
+     <div class="form-group">
+       <input id="search-bar" type="text" name="search" placeholder="Where would you like to discover?">
+     </div>
      <div>
-      <% if session['user_id'] %>
-          <div class="col-md-6 text-center">
-          <form action="/users/itinerary" method="post">
-            <button>Add to itinerary</button>
-            <input type="hidden" name="sight" value="<%= sight.id %>">
-          </form>
+       <button type="submit" class="btn btn-primary">Let's go!</button>
+     </div>
+   </form>
+
+  <% if @sights != nil %>
+  <div>
+    <div class="row">
+      <% @sights.each do |sight| %>
+      <div>
+        <% if session['user_id'] %>
+        <div class="col-md-4 text-center">
+            <form action="/users/itinerary" method="post">
+              <button>Add to itinerary</button>
+              <input type="hidden" name="sight" value="<%= sight.id %>">
+            </form>
         <% else %>
           <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
         <% end %>
+
         <script type="text/javascript">
           var feed = new Instafeed({
           get: 'tagged',
@@ -37,18 +38,23 @@
            });
           feed.run();
         </script>
+      
         <div id="<%= sight.id %>"></div>
-        <p>Sight Name: <%= sight.sight_name %></p>
-        <p>Category: <%= sight.category %></p>
-        <p>Features: <%= sight.feature %> </p>
+        <div>
+          <p>Sight Name: <%= sight.sight_name %></p>
+          <p>Category: <%= sight.category %></p>
+          <p>Features: <%= sight.feature %> </p>
         <div id="<%= sight.id %>"></div>
-     </div>
-     </div>
-     <% end %>
-   </div>
- <% end %>
+         </div> 
+        </div>
+      </div>
+      <% end %>
 
- <div>
-   <%= @error %>
- </div>
- 
+    </div>
+  <% end %>
+
+
+  <div>
+     <%= @error %>
+  </div>
+

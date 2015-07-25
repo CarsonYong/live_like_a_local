@@ -10,6 +10,7 @@
 # get '/users/:id/edit' # edit_user_path
 
 get '/users/new' do
+  @body_class = 'signup'
   erb :'users/new'
 end
 
@@ -27,13 +28,14 @@ post '/users' do
   end
   if @user.save
     set_session_info(@user)
-    redirect '/sights/'
+    redirect '/sights'
   else
     erb :'users/new'
   end
 end
 
 get '/users/itinerary' do
+  @body_class = 'itinerary'
   require_user
   @current_user.sights
   erb :'users/itinerary'

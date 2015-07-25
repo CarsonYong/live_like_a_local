@@ -1,17 +1,8 @@
-<% if @user && @user.errors.any? %>
-  <div>
-    <strong>There are issues with your form, please fix them:</strong>
-    <ul>
-      <% @user.errors.full_messages.each do |user| %>
-        <li><%= user %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<div>
 
-<div class = "signup">
+  <h2>Signup to make awesome itineraries <br> of your favourite local spots</h2>
 
-  <form method="post" action="/users">
+  <form role="form" method="post" action="/users">
 
     <div>
       <label>Username:</label>
@@ -35,16 +26,27 @@
     </div>
     <div>
       <label>Home City/Town:</label>
-      <input type="text" name="location[city]" >   
+      <input type="text" name="location[city]" value="<%= @location && @location.city %>">   
     </div>
     <div>
       <label>Country:</label>
-      <input type="text" name="location[country]" >   
+      <input type="text" name="location[country]" value="<%= @location && @location.country %>">   
     </div>   
     <div>
-    <input type="submit" value="Submit">
+    <button type="submit" class="btn btn-primary">Sign me up!</button>
     </div>
 
   </form>
 
 </div>
+
+<% if @user && @user.errors.any? %>
+  <div>
+    <strong>There are issues with your form, please fix them:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |user| %>
+        <li><%= user %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

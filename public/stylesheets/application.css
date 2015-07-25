@@ -1,0 +1,175 @@
+label {
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+input {
+  height: 40px;
+  width: 200px;
+  margin: 0.5%;
+}
+
+.homepage {
+  background-image: url(http://holeintheclouds.net/sites/holeintheclouds.net/files/good_morning/13jan/marrakech.jpg);
+  text-align: center;
+  background-repeat: no-repeat;
+}
+
+.text-box {
+  margin-top: 15%;
+}
+
+.text-box button {
+  margin: 1%;
+}
+
+.homepage h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 6em;
+}
+
+.homepage h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #ffffff;
+  font-size: 2em;
+} 
+
+.homepage a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-nav li {
+  color: #ffffff;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
+}
+
+#welcome {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-nav>li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+.search {
+  margin-top: 15%;
+  text-align: center;
+  background-image: url("/images/new-york-city.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.search h2 {
+  color: #ffffff;
+}
+
+.form-group {
+  padding: 2%;
+}
+
+#search-bar {
+  height: 60px;
+  width: 700px;
+  font-size: 2em;
+  text-align: center;
+}
+
+.signup {
+  margin-top: 5%;
+  text-align: center;
+  background-image: url("/images/hyde-park.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.signup h2 {
+    color: #ffffff;
+}
+
+.signup label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em; 
+}
+
+.signup button {
+  margin: 1%;
+}
+
+.login {
+  margin-top: 5%;
+  text-align: center;
+  background-image: url("/images/festival.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.login h2 {
+  color: #ffffff;
+}
+
+.login p {
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em; 
+}
+
+.login button {
+  margin: 1%;
+}
+
+.login label {
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em; 
+}
+
+.login a {
+  color: #c1fe00;
+}
+
+#sub-text {
+  margin-top: 5%;
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+.sights {
+  margin-top: 10%;
+  text-align: center;
+  background-image: url("/images/beach.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.sights h2 {
+  color: #ffffff;
+}
+
+#text-box {
+  height: 100px;
+  width: 200px;
+}
+
+.itinerary {
+  margin-top: 5%;
+  text-align: center;
+  background-color: #ccc8c8;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.itinerary h2 {
+  color: #282828;
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+}
+

@@ -2,13 +2,13 @@
 enable :session
 
 get '/' do
+  @body_class = 'homepage'
   erb :'index'
 end
 
 get '/insta' do
   erb :'insta'
 end
-
 
 def require_user
   if session['user_id']
