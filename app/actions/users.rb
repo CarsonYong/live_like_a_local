@@ -51,12 +51,14 @@ post '/users/itinerary' do
 end
 
 get '/users/profile' do
+  @body_class = 'profile'
   require_user
   erb :'users/show'
 end
 
 
 get '/users/edit' do
+  @body_class = 'edit'
   require_user
   @user = session['user_id']
   current_user = User.find(@user)
@@ -88,4 +90,3 @@ post '/users/edit' do
     erb :'users/new'
   end
 end
-

@@ -10,14 +10,14 @@
    </form>
 
   <% if @sights != nil %>
-  <div>
+  <div id="results">
     <div class="row">
       <% @sights.each do |sight| %>
       <div>
         <% if session['user_id'] %>
         <div class="col-md-4 text-center">
             <form action="/users/itinerary" method="post">
-              <button>Add to itinerary</button>
+              <button class="btn btn-primary">Add to itinerary</button>
               <input type="hidden" name="sight" value="<%= sight.id %>">
             </form>
         <% else %>
@@ -30,7 +30,7 @@
           tagName: 'toronto',
           target: "<%= sight.id %>",
           limit: '1',
-          sortBy: 'random',
+          // sortBy: 'random',
           resolution: 'low_resolution',
           get: 'location',
           locationId: <%= sight.instagram_location %>,
@@ -39,12 +39,12 @@
           feed.run();
         </script>
       
-        <div id="<%= sight.id %>"></div>
-        <div>
+<!--         <div id="<%= sight.id %>"></div>
+ -->     <div class="sight_info">
+          <div id="<%= sight.id %>"></div>
           <p>Sight Name: <%= sight.sight_name %></p>
           <p>Category: <%= sight.category %></p>
           <p>Features: <%= sight.feature %> </p>
-        <div id="<%= sight.id %>"></div>
          </div> 
         </div>
       </div>
