@@ -30,7 +30,7 @@ post '/sights/new' do
   end
 
   if @sight.save
-    redirect '/sights/'
+    redirect '/sights'
   else
     erb :'sights/new'
   end
