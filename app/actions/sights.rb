@@ -10,6 +10,7 @@ get '/sights' do
 end
 
 get '/sight' do
+  @body_class = 'search'
   @location = Location.find_by_city(params[:search])
   if @location
     @sights = Sight.where(location: @location)
@@ -26,7 +27,7 @@ post '/sights/new' do
   location = Location.where(["city = :city", { city: @city }])
   if location.length > 0
     @sight.location = location[0]
-  else
+  else 
     redirect '/sights/new'
   end
 

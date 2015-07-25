@@ -1,4 +1,5 @@
 get '/sessions/new' do
+  @body_class = 'login'
   erb :'sessions/new'
 end
 
