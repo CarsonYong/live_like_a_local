@@ -3,8 +3,11 @@
 <script type="text/javascript">
     var feed = new Instafeed({
         get: 'tagged',
+        target: 'instafeed',
         tagName: 'toronto',
         limit: '25',
+        sortBy: 'random',
+        resolution: 'low_resolution',
         get: 'location',
         locationId: 677642205,
         clientId: '23ec1684bbc84ed58dcf804e3f4b9897'
@@ -17,8 +20,10 @@
         get: 'tagged',
         tagName: 'toronto',
         limit: '25',
+        sortBy: 'random',
+        resolution: 'low_resolution',
         get: 'location',
-        locationId: 764246607,
+        locationId: 11657414,
         clientId: '23ec1684bbc84ed58dcf804e3f4b9897'
     });
     feed.run();

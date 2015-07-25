@@ -1,5 +1,6 @@
-<h2>Search for a city below to discover local hot spots</h2>
+<script type="text/javascript" src="/javascript/instafeed.min.js"></script>
 
+<h2>Search for a city below to discover local hot spots</h2>
  <form role="form" action="/sight" method="get">
    <div class="form-group">
      <input id="search-bar" type="text" name="search" placeholder="Where would you like to discover?">
@@ -10,25 +11,51 @@
  </form>
 
 <% if @sights != nil %>
-   <div>
-     <% @sights.each do |sight| %>
-     <div>
+<div>
+  <div class="row">
+    <% @sights.each do |sight| %>
+    <div>
       <% if session['user_id'] %>
+      <div class="col-md-4 text-center">
           <form action="/users/itinerary" method="post">
             <button>Add to itinerary</button>
             <input type="hidden" name="sight" value="<%= sight.id %>">
           </form>
-        <% else %>
-          <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
-        <% end %>
-        <%= sight.sight_name %>
-        <%= sight.category %>
-        <%= sight.feature %>
+      <% else %>
+        <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
       <% end %>
-    </div>
-   </div>
- <% end %>
 
- <div>
-   <%= @error %>
- </div>
+      <script type="text/javascript">
+        var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'toronto',
+        target: "<%= sight.id %>",
+        limit: '1',
+        sortBy: 'random',
+        resolution: 'low_resolution',
+        get: 'location',
+        locationId: <%= sight.instagram_location %>,
+        clientId: '23ec1684bbc84ed58dcf804e3f4b9897'
+         });
+        feed.run();
+      </script>
+    
+      <div id="<%= sight.id %>"></div>
+      <div>
+        <p>Sight Name: <%= sight.sight_name %></p>
+        <p>Category: <%= sight.category %></p>
+        <p>Features: <%= sight.feature %> </p>
+      <div id="<%= sight.id %>"></div>
+       </div> 
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+<% end %>
+
+
+<div>
+  <%= @error %>
+</div>
+

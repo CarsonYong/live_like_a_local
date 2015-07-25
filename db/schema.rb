@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724185727) do
+ActiveRecord::Schema.define(version: 20150725014938) do
 
   create_table "locations", force: :cascade do |t|
     t.string "country"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150724185727) do
     t.string  "category"
     t.string  "feature"
     t.integer "location_id"
+    t.integer "instagram_location"
   end
 
   create_table "user_sights", force: :cascade do |t|
