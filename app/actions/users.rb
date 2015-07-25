@@ -35,6 +35,7 @@ post '/users' do
 end
 
 get '/users/itinerary' do
+  @body_class = 'itinerary'
   require_user
   @current_user.sights
   erb :'users/itinerary'

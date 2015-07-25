@@ -1,4 +1,5 @@
 get '/sights/new' do
+  @body_class = 'sights'
   require_user
   @current_user_location = @current_user.location.city
   erb :'sights/new'

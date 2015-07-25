@@ -1,3 +1,15 @@
+label {
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+input {
+  height: 40px;
+  width: 200px;
+  margin: 0.5%;
+}
+
 .homepage {
   background-image: url(http://holeintheclouds.net/sites/holeintheclouds.net/files/good_morning/13jan/marrakech.jpg);
   text-align: center;
@@ -66,7 +78,6 @@
 #search-bar {
   height: 60px;
   width: 700px;
-  border-radius: 5%;
   font-size: 2em;
   text-align: center;
 }
@@ -84,16 +95,8 @@
 }
 
 .signup label {
-  color: #ffffff;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1.5em; 
-}
-
-.signup input {
-  height: 40px;
-  width: 200px;
-  border-radius: 5%;
-  margin: 0.5%;
 }
 
 .signup button {
@@ -118,6 +121,55 @@
   font-size: 1.5em; 
 }
 
+.login button {
+  margin: 1%;
+}
 
+.login label {
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em; 
+}
 
+.login a {
+  color: #c1fe00;
+}
+
+#sub-text {
+  margin-top: 5%;
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+.sights {
+  margin-top: 10%;
+  text-align: center;
+  background-image: url("/images/beach.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.sights h2 {
+  color: #ffffff;
+}
+
+#text-box {
+  height: 100px;
+  width: 200px;
+}
+
+.itinerary {
+  margin-top: 5%;
+  text-align: center;
+  background-color: #ccc8c8;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.itinerary h2 {
+  color: #282828;
+  font-family: 'Lobster', cursive;
+  font-size: 3em;
+}
 
