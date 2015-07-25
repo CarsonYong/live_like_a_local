@@ -1,12 +1,11 @@
-<div>
-
 <h2>My Itinerary</h2>
 
-     <% @current_user.sights.each do |sight| %>
-     <div>
-        <%= sight.sight_name %>
-        <%= sight.category %>
-        <%= sight.feature %>
-     </div>
-     <% end %>
-   </div>
+<% @current_user.sights.each do |sight| %>
+
+<div>
+  <%= sight.sight_name %>
+  <%= sight.category %>
+  <%= sight.feature %>
+</div>
+
+<% end %>
