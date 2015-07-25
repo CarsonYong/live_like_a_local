@@ -1,10 +1,11 @@
 get '/sights/new' do
-    require_user
-    @current_user_location = @current_user.location.city
-    erb :'sights/new'
+  require_user
+  @current_user_location = @current_user.location.city
+  erb :'sights/new'
 end
 
 get '/sights' do
+  @body_class = 'search'
   erb :'sights/index'
 end
 
@@ -30,7 +31,7 @@ post '/sights/new' do
   end
 
   if @sight.save
-    redirect '/sights/'
+    redirect '/sights'
   else
     erb :'sights/new'
   end

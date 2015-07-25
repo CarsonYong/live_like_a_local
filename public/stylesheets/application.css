@@ -1,11 +1,64 @@
 .homepage {
   background-image: url(http://holeintheclouds.net/sites/holeintheclouds.net/files/good_morning/13jan/marrakech.jpg);
+  text-align: center;
+  background-repeat: no-repeat;
 }
 
 .text-box {
-  
+  margin-top: 20%;
 }
 
-.hompage h1 {
-
+.homepage h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 6em;
 }
+
+.homepage h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #ffffff;
+  font-size: 2em;
+} 
+
+.homepage a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-nav li {
+  color: #ffffff;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  font-size: 2em;
+}
+
+#welcome {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.navbar-nav>li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+.search {
+  margin-top: 10%;
+  text-align: center;
+  background-color: #ccc8c8;
+}
+
+.form-group {
+  padding: 2%;
+}
+
+#search-bar {
+  height: 60px;
+  width: 700px;
+  border-radius: 10%;
+}
+
+
+
+

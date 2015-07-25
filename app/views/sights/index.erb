@@ -1,32 +1,38 @@
- <form action="/sight" method="get">
-   <div>
-     <input type="text" name="search" placeholder="Where would you like to discover?">
-   </div>
-   <div>
-     <input type="submit" value="Let's go!">
-   </div>
- </form>
+<div class="search">
 
-<% if @sights != nil %>
-   <div>
-     <% @sights.each do |sight| %>
-     <div>
-      <% if session['user_id'] %>
-          <form action="/users/itinerary" method="post">
-            <button>Add to itinerary</button>
-            <input type="hidden" name="sight" value="<%= sight.id %>">
-          </form>
-        <% else %>
-          <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
-        <% end %>
-        <%= sight.sight_name %>
-        <%= sight.category %>
-        <%= sight.feature %>
+  <h2>Search for a city below to start living like  local</h2>
+
+   <form role="form" action="/sight" method="get">
+     <div class="form-group">
+       <input id="search-bar" type="text" name="search" placeholder="Where would you like to discover?">
      </div>
-     <% end %>
-   </div>
- <% end %>
+     <div>
+       <button type="submit" class="btn btn-primary">Let's go!</button>
+     </div>
+   </form>
 
- <div>
-   <%= @error %>
- </div>
+  <% if @sights != nil %>
+     <div>
+       <% @sights.each do |sight| %>
+       <div>
+        <% if session['user_id'] %>
+            <form action="/users/itinerary" method="post">
+              <button>Add to itinerary</button>
+              <input type="hidden" name="sight" value="<%= sight.id %>">
+            </form>
+          <% else %>
+            <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
+          <% end %>
+          <%= sight.sight_name %>
+          <%= sight.category %>
+          <%= sight.feature %>
+       </div>
+       <% end %>
+     </div>
+   <% end %>
+
+   <div>
+     <%= @error %>
+   </div>
+
+</div>
