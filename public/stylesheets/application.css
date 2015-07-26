@@ -61,16 +61,26 @@ input {
 }
 
 .search {
-  margin-top: 15%;
+  margin-top: 10%;
   text-align: center;
   background-image: url("/images/new-york-city.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
-  position: fixed;
+  background-attachment: fixed;
 }
 
 .search h2 {
   color: #ffffff;
+}
+
+.search p {
+  color: #ffffff;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+}
+
+#results {
+  margin-top: 5%;
 }
 
 .form-group {
