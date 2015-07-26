@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-md-4">
+		<script type="text/javascript">
+		var feed = new Instafeed({
+		get: 'tagged',
+		tagName: 'toronto',
+		target: "<%= @sight.id %>",
+		limit: '5',
+		// sortBy: 'random',
+		resolution: 'low_resolution',
+		get: 'location',
+		locationId: <%= @sight.instagram_location %>,
+		clientId: '6b57da6cc49c4e2ca5af262214decb93'
+		});
+		feed.run();
+		</script>        
+
+		<h3>Latest Photos</h3>
+
+		<div id="<%= @sight.id %>"></div>
+	</div>
+</div>
+
+		<p>Sight Name: <%= @sight.sight_name %></p>
+		<p>Category: <%= @sight.category %></p>
+		<p>Features: <%= @sight.feature %> </p>
+
+		<a href="/sight">Back to all sight</a>
+
+	

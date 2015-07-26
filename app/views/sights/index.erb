@@ -34,7 +34,7 @@
           resolution: 'low_resolution',
           get: 'location',
           locationId: <%= sight.instagram_location %>,
-          clientId: '23ec1684bbc84ed58dcf804e3f4b9897'
+          clientId: '6b57da6cc49c4e2ca5af262214decb93'
            });
           feed.run();
         </script>
@@ -42,7 +42,7 @@
 <!--         <div id="<%= sight.id %>"></div>
  -->     <div class="sight_info">
           <div id="<%= sight.id %>"></div>
-          <p>Sight Name: <%= sight.sight_name %></p>
+          <p><a href="/sights/<%= sight.id %>">Sight Name: <%= sight.sight_name %></a></p>
           <p>Category: <%= sight.category %></p>
           <p>Features: <%= sight.feature %> </p>
          </div> 
