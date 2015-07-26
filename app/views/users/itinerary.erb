@@ -1,39 +1,43 @@
-<div>
-
 <h2>My Itinerary</h2>
-    <div class="row">
-     <% @current_user.sights.each do |sight| %>
-      <div class="col-md-4 text-center">
-        <script type="text/javascript">
-          var feed = new Instafeed({
-          get: 'tagged',
-          tagName: 'toronto',
-          target: "<%= sight.id %>",
-          limit: '1',
-          // sortBy: 'random',
-          resolution: 'low_resolution',
-          get: 'location',
-          locationId: <%= sight.instagram_location %>,
-          clientId: '23ec1684bbc84ed58dcf804e3f4b9897'
-           });
-          feed.run();
-        </script>  
-        
 
-    <div class="image-wrapper"> 
-    <div class="photo-box">
-      <div id="<%= sight.id %>"></div>
+<div class="row">
+  <% @current_user.sights.each do |sight| %>
+    <div class="col-md-4 text-center">
+      <script type="text/javascript">
+        var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'toronto',
+        target: "<%= sight.id %>",
+        limit: '1',
+        // sortBy: 'random',
+        resolution: 'low_resolution',
+        get: 'location',
+        locationId: <%= sight.instagram_location %>,
+        clientId: '23ec1684bbc84ed58dcf804e3f4b9897'
+         });
+        feed.run();
+      </script>  
+      
+
+    <div class="image-wrapper">
+
+      <div class="photo-box">
+
+        <div id="<%= sight.id %>"></div>
       
       </div>
+
     </div>
-      <div class="test">
-      <p>Sight Name: <%= sight.sight_name %><br>
-      Category: <%= sight.category %><br>
-      Features: <%= sight.feature %> </p>
-     </div>
-     </div>
-     <% end %>
+
+      <div class="sight-desc">
+        <p><strong>Sight Name: <%= sight.sight_name %> </strong><br>
+        Category: <%= sight.category %><br>
+        Features: <%= sight.feature %> </p>
+      </div>
 
    </div>
+  <% end %>
+
+</div>
 
 

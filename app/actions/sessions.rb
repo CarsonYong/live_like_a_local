@@ -4,6 +4,7 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
+  @body_class = 'login'
   @user = User.find_by_username(params[:username])
   if @user == nil
     @error = 'Username not found!'

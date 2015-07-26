@@ -10,6 +10,11 @@ get '/sights' do
   erb :'sights/index'
 end
 
+get '/sights/:id' do
+  @sight = Sight.find params[:id]
+  erb :'sights/show'
+end
+
 get '/sight' do
   @body_class = 'search'
   @location = Location.find_by_city(params[:search])

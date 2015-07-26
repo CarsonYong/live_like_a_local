@@ -25,7 +25,7 @@ input {
 }
 
 .text-box button {
-  margin: 1%;
+  margin: 3%;
 }
 
 .homepage h1 {
@@ -73,12 +73,6 @@ input {
   color: #ffffff;
 }
 
-.search p {
-  color: #ffffff;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1em;
-}
-
 #results {
   margin-top: 5%;
 }
@@ -100,6 +94,7 @@ input {
   background-image: url("/images/hyde-park.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+  background-attachment: fixed;
 }
 
 .signup h2 {
@@ -121,6 +116,7 @@ input {
   background-image: url("/images/festival.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
+  background-attachment: fixed;
 }
 
 .login h2 {
@@ -166,6 +162,35 @@ input {
   color: #ffffff;
 }
 
+.instaimg {
+  margin-top: 5%;
+  margin-bottom: 40%;
+  position: relative;
+}
+
+.sight-info {
+  position: absolute;
+  margin-left: 5.5%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: #282828;
+  opacity:0.6;
+  width: 320px;
+  border-radius: 5px;
+  z-index: +1;
+}
+
+.sight-info a {
+  color: #5cb85c;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.col-sm-4 {
+  margin-top: 4%;
+}
+
 #text-box {
   height: 100px;
   width: 200px;
@@ -177,6 +202,7 @@ input {
   background-color: #ccc8c8;
   background-repeat: no-repeat;
   background-size: 100%;
+  background-attachment: fixed;
 }
 
 .itinerary h2 {
@@ -223,9 +249,7 @@ input {
   margin-top: 2%;
 }
 
-.sight_info {
-  margin-top: 5%;
-}
+.sight
 
 .image-wrapper {
   margin: 0 0 0px 0;
@@ -234,18 +258,32 @@ input {
 .image-wrapper .photo-box {
   width: 100%;
 }
-.test {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 12px;
-    background: white;
-    color: #9b9b9b;
-    letter-spacing: 1px;
-    padding: 15px;
-    width: 320px;
-    height: 75px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-left: 5.5%;
+
+.photo-box {
+  margin-top: 10%;
 }
+
+.sight-desc {
+  margin-left: 5.5%;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  color: #282828;
+  background-color: #ffffff;
+  opacity:0.6;
+  width: 321px;
+  border-radius: 5px;
+  z-index: +1;
+}
+
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  padding: 50px 0;
+  color: #bbbbbb;
+}
+
+
 

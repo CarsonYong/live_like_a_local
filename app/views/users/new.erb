@@ -1,44 +1,40 @@
-<div>
+<h2>Signup to make awesome itineraries <br> of your favourite local spots</h2>
 
-  <h2>Signup to make awesome itineraries <br> of your favourite local spots</h2>
+<form role="form" method="post" action="/users">
 
-  <form role="form" method="post" action="/users">
+  <div>
+    <label>Username:</label>
+    <input type="text" name="users[username]" value="<%= @user && @user.username %>">
+  </div>
+  <div>
+    <label>First Name:</label>
+    <input type="text" name="users[first_name]" value="<%= @user && @user.first_name %>">
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <input type="text" name="users[last_name]" value="<%= @user && @user.last_name %>">
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="text" name="users[email]" value="<%= @user && @user.email %>">   
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="users[password]">   
+  </div>
+  <div>
+    <label>Home City/Town:</label>
+    <input type="text" name="location[city]" value="<%= @location && @location.city %>">   
+  </div>
+  <div>
+    <label>Country:</label>
+    <input type="text" name="location[country]" value="<%= @location && @location.country %>">   
+  </div>   
+  <div>
+  <button type="submit" class="btn btn-primary">Sign me up!</button>
+  </div>
 
-    <div>
-      <label>Username:</label>
-      <input type="text" name="users[username]" value="<%= @user && @user.username %>">
-    </div>
-    <div>
-      <label>First Name:</label>
-      <input type="text" name="users[first_name]" value="<%= @user && @user.first_name %>">
-    </div>
-    <div>
-      <label>Last Name:</label>
-      <input type="text" name="users[last_name]" value="<%= @user && @user.last_name %>">
-    </div>
-    <div>
-      <label>Email:</label>
-      <input type="text" name="users[email]" value="<%= @user && @user.email %>">   
-    </div>
-    <div>
-      <label>Password:</label>
-      <input type="password" name="users[password]">   
-    </div>
-    <div>
-      <label>Home City/Town:</label>
-      <input type="text" name="location[city]" value="<%= @location && @location.city %>">   
-    </div>
-    <div>
-      <label>Country:</label>
-      <input type="text" name="location[country]" value="<%= @location && @location.country %>">   
-    </div>   
-    <div>
-    <button type="submit" class="btn btn-primary">Sign me up!</button>
-    </div>
-
-  </form>
-
-</div>
+</form>
 
 <% if @user && @user.errors.any? %>
   <div>
