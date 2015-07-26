@@ -42,7 +42,7 @@
           get: 'tagged',
           tagName: 'toronto',
           target: "<%= sight.id %>",
-          limit: '1',
+          limit: '5',
           // sortBy: 'random',
           resolution: 'low_resolution',
           get: 'location',
@@ -54,7 +54,7 @@
       
        <div class="instaimg">
 
-          <div id="<%= sight.id %>"></div>
+          <div class ="instagram-images" id="<%= sight.id %>"></div>
 
             <div class="sight-info">
               <p><a href="/sights/<%= sight.id %>"><%= sight.sight_name %></a></p>

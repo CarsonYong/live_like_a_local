@@ -285,5 +285,13 @@ h3 {
   color: #bbbbbb;
 }
 
+.instagram-images a { 
+  display: none; 
+} 
+
+.instagram-images a:first-child { 
+  display: block; 
+}
+
 
 
