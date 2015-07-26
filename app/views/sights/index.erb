@@ -21,9 +21,10 @@
       <% @sights.each do |sight| %>
       
       <div>
+      <div class="col-sm-4">
         <% if session['user_id'] %>
 
-        <div class="col-sm-4">
+        
 
             <form action="/users/itinerary" method="post">
               <button class="btn btn-success">Add to itinerary</button>
@@ -56,7 +57,7 @@
           <div id="<%= sight.id %>"></div>
 
             <div class="sight-info">
-              <p><a href="/sights/<%= sight.id %>">Sight Name: <%= sight.sight_name %></a></p>
+              <p><a href="/sights/<%= sight.id %>"><%= sight.sight_name %></a></p>
               <p>Category: <%= sight.category %></p>
               <p>Features: <%= sight.feature %> </p>
             </div>
