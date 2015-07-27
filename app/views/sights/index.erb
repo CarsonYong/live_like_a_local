@@ -21,51 +21,55 @@
       <% @sights.each do |sight| %>
       
       <div>
-      <div class="col-sm-4">
-        <% if session['user_id'] %>
 
+        <div class="col-sm-4">
+
+          <% if session['user_id'] %>
+
+              <form action="/users/itinerary" method="post">
+                <button class="btn btn-success">Add to itinerary</button>
+                <input type="hidden" name="sight" value="<%= sight.id %>">
+              </form>
+
+          <% else %>
+
+            <button class="btn btn-success"><a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a></button>
+
+          <% end %>
+
+          <script type="text/javascript">
+            var feed = new Instafeed({
+            get: 'tagged',
+            tagName: 'toronto',
+            target: "<%= sight.id %>",
+            limit: '5',
+            // sortBy: 'random',
+            resolution: 'low_resolution',
+            get: 'location',
+            locationId: <%= sight.instagram_location %>,
+            clientId: '6b57da6cc49c4e2ca5af262214decb93'
+             });
+            feed.run();
+          </script>
         
+          <div class="instaimg">
 
-            <form action="/users/itinerary" method="post">
-              <button class="btn btn-success">Add to itinerary</button>
-              <input type="hidden" name="sight" value="<%= sight.id %>">
-            </form>
-
-        <% else %>
-
-          <a href="/sessions/new?q=<%= sight.id %>">Add to itinerary</a>
-
-        <% end %>
-
-        <script type="text/javascript">
-          var feed = new Instafeed({
-          get: 'tagged',
-          tagName: 'toronto',
-          target: "<%= sight.id %>",
-          limit: '5',
-          // sortBy: 'random',
-          resolution: 'low_resolution',
-          get: 'location',
-          locationId: <%= sight.instagram_location %>,
-          clientId: '6b57da6cc49c4e2ca5af262214decb93'
-           });
-          feed.run();
-        </script>
-      
-       <div class="instaimg">
-
-          <div class ="instagram-images" id="<%= sight.id %>"></div>
+            <div class ="instagram-images" id="<%= sight.id %>"></div>
 
             <div class="sight-info">
+
               <p><a href="/sights/<%= sight.id %>"><%= sight.sight_name %></a></p>
               <p>Category: <%= sight.category %></p>
               <p>Features: <%= sight.feature %> </p>
+
             </div>
+
           </div> 
 
         </div>
 
       </div>
+
       <% end %>
 
     </div>

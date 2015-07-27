@@ -239,6 +239,7 @@ input {
   margin-top: 5%;
   text-align: center;
   color: #282828;
+  background-color: #ccc8c8;
 }
 
 .edit label {
@@ -249,7 +250,11 @@ input {
   margin-top: 2%;
 }
 
-.sight
+.edit h2 {
+  color: #282828;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2em;
+}
 
 .image-wrapper {
   margin: 0 0 0px 0;
