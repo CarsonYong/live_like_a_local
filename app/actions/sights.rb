@@ -30,7 +30,7 @@ end
 post '/sights/new' do
   @sight = Sight.new(params[:sights])
   @city = (params[:location][:city])
-  location = Location.where(["city = :city", { city: @city }])
+  location = Location.where({ city: @city })
   if location.length > 0
     @sight.location = location[0]
   else 

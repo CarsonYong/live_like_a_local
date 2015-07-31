@@ -18,7 +18,7 @@ post '/users' do
   @user = User.new(params[:users])
   @city = (params[:location][:city])
   @country = (params[:location][:country])
-  location = Location.where(["city = :city and country = :country", { city: @city, country: @country }])
+  location = Location.where({ city: @city, country: @country })
   if location.length == 0
     @location = Location.new({:city=> @city, :country => @country})
     @location.save
@@ -75,7 +75,7 @@ post '/users/edit' do
   @current_user.update_attributes(params[:users])
   @city = (params[:location][:city])
   @country = (params[:location][:country])
-  location = Location.where(["city = :city and country = :country", { city: @city, country: @country }])
+  location = Location.where( { city: @city, country: @country })
   if location.length == 0
     @location = Location.new({:city=> @city, :country => @country})
     @location.save
